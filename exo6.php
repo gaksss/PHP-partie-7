@@ -10,7 +10,17 @@
 <body>
 
 
-    <form action="./exo5.php" method="post">
+    
+    <?php
+
+    if (isset($_POST["genre"]) && isset($_POST["nom"]) && isset($_POST["prenom"])) {
+        $genre = $_POST["genre"];
+        $nom = $_POST["nom"];
+        $prenom = $_POST["prenom"];
+        echo  $genre . " " . $nom . " " . $prenom;
+    } else {
+    ?>
+    <form action="./exo6.php" method="post">
         <label for="genre">Genre: </label>
         <select name="genre" id="genre">
             <option value="Homme">Homme</option>
@@ -24,14 +34,9 @@
         <input type="submit" value="Envoyer">
     </form>
 
+<?php 
 
-    <?php
-    if (isset($_POST["genre"]) && isset($_POST["nom"]) && isset($_POST["prenom"])) {
-        $genre = $_POST["genre"];
-        $nom = $_POST["nom"];
-        $prenom = $_POST["prenom"];
-        echo  $genre . " " . $nom . " " . $prenom;
-    }
+    }; 
     ?>
 
 
